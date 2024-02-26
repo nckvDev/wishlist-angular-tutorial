@@ -13,14 +13,5 @@ export class AppComponent {
     new WishItem('FInd grass that cuts itself'),
   ];
 
-  listFilter: string = '0';
-  newWishText = '';
-
-  filter: any = () => true;
-
-  title = 'wishlist';
-
-  // get visibleItems(): WishItem[] {
-  //   return this.items.filter(this.filter);
-  // }
+  filter: any;
 }
