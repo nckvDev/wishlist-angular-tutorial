@@ -29,14 +29,9 @@ export class AppComponent {
   }
 
   addNewWish() {
-    this.items.push(new WishItem(this.newWishText));
-    this.newWishText = '';
     // todo: add wish to items array
     // clear the box
-  }
-
-  toggleItem(item: WishItem) {
-    item.isComplete = !item.isComplete;
-    console.log('toggle!', item);
+    this.items.push(new WishItem(this.newWishText));
+    this.newWishText = '';
   }
 }
