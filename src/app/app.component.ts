@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishitem';
 
-const filters = [
-  (item: WishItem) => item,
-  (item: WishItem) => !item.isComplete,
-  (item: WishItem) => item.isComplete,
-];
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,16 +16,11 @@ export class AppComponent {
   listFilter: string = '0';
   newWishText = '';
 
+  filter: any = () => true;
+
   title = 'wishlist';
 
-  get visibleItems(): WishItem[] {
-    return this.items.filter(filters[this.listFilter]);
-  }
-
-  addNewWish() {
-    // todo: add wish to items array
-    // clear the box
-    this.items.push(new WishItem(this.newWishText));
-    this.newWishText = '';
-  }
+  // get visibleItems(): WishItem[] {
+  //   return this.items.filter(this.filter);
+  // }
 }
